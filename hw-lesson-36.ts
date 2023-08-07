@@ -144,57 +144,57 @@ const movies:TypeMovies[] = [
 }
 ]
 
-  // Task 1
-// const getGenres = (movies: TypeMovies[]): string[] => {
-// return movies.map(({genre}) => genre).flat()
-// .reduce((result: string[], item: string) => {
-//     return result.includes(item) ? result : [... result, item];
-// }, []);
+ // Task 1
+const getGenres = (movies: TypeMovies[]): string[] => {
+return movies.map(({genre}) => genre).flat()
+.reduce((result: string[], item: string) => {
+    return result.includes(item) ? result : [... result, item];
+}, []);
   
-//   }
-// console.log(getGenres(movies))
+  }
+console.log(getGenres(movies))
 
 
-//  //Task 2
+ //Task 2
 
-// const getActors = (movies: TypeMovies[]): string[] => {
-// return movies.map(({actors}) => actors).flat()
-// .reduce((unique: string[], item: string) => { 
-//     return unique.includes(item) ? unique : [...unique,item]
-// },[])
+const getActors = (movies: TypeMovies[]): string[] => {
+return movies.map(({actors}) => actors).flat()
+.reduce((unique: string[], item: string) => { 
+    return unique.includes(item) ? unique : [...unique,item]
+},[])
 
-// }
-// console.log(getActors(movies))
+}
+console.log(getActors(movies))
 
-//  //Task 3
+ //Task 3
 
-// const sortedRating = (movies: TypeMovies[]) => {
-//     return movies.sort((a,b) => a.imdbRating > b.imdbRating ? 1 : -1)
-// }
-// console.log(sortedRating(movies))
+const sortedRating = (movies: TypeMovies[]) => {
+    return movies.sort((a,b) => a.imdbRating > b.imdbRating ? 1 : -1)
+}
+console.log(sortedRating(movies))
 
-// //Task 4
+//Task 4
 
-// const newArrMovies = (movies: TypeMovies[]) => {
-//     return movies.map(({id,title,released,plot}) => ({id,title,released,plot}))
-//     }
-// console.log(newArrMovies(movies))
+const newArrMovies = (movies: TypeMovies[]) => {
+    return movies.map(({id,title,released,plot}) => ({id,title,released,plot}))
+    }
+console.log(newArrMovies(movies))
 
 //Task 5
 
-// const filterByYear = (movies: TypeMovies[], year: number) => {
-//     return movies.filter(item => item.year === year)
-//     }
-// console.log(filterByYear(movies,2009))
+const filterByYear = (movies: TypeMovies[], year: number) => {
+    return movies.filter(item => item.year === year)
+    }
+console.log(filterByYear(movies,2009))
 
 // Task 6
 
-// const filterByName = (movies: TypeMovies[], string: string) => {
-//     return movies.filter(item => {
-//     return item.title.toLowerCase().includes(string.toLowerCase())
-//     })
-//     }
-// console.log(filterByName(movies,'wars'))
+const filterByName = (movies: TypeMovies[], string: string) => {
+    return movies.filter(item => {
+    return item.title.toLowerCase().includes(string.toLowerCase())
+    })
+    }
+console.log(filterByName(movies,'wars'))
 
 // Task 7
 
@@ -205,11 +205,11 @@ const filterByString = (movies: TypeMovies[], string: string) => {
     }
 console.log(filterByString(movies,'TiEs'))
  
-// // Task 8
+// Task 8
 
-// type TypeValues=number|string|string[]
-// const filterWithParameters= <T extends TypeMovies> (array:T[],key:string,value: TypeValues)=>{
+type TypeValues=number|string|string[]
+const filterWithParameters= <T extends TypeMovies> (array:T[],key:string,value: TypeValues)=>{
 
-//     return array.filter((item:TypeMovies) => item[key] === value)
-// }
-// console.log(filterWithParameters(movies,'year', 2011))
+    return array.filter((item:TypeMovies) => item[key] === value)
+}
+console.log(filterWithParameters(movies,'year', 2011))
