@@ -1,0 +1,107 @@
+.menu__container{
+    width: 100%;  
+}
+nav{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(9, 9, 89);
+}
+.burger_menu{
+    background-color: rgb(9, 9, 89);
+    width: 8%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+.burger_menu::before{
+    height: 2px;
+    background-color: #fff;
+    content:'';
+    position:absolute;
+    top: 32%;
+    left: 25%;
+    width: 40%;
+}
+.burger_menu::after{
+    height: 2px;
+    background-color: #fff;
+    content:'';
+    position:absolute;
+    bottom: 30%;
+    left: 25%;
+    width: 40%;
+}
+.burger_menu span{
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 40%;
+    background-color: #fff;
+    height: 2px;
+}
+
+input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    background-color: rgb(129, 129, 225);
+    outline: none;
+}
+
+
+
+input::placeholder{
+font-size: 18px;
+    padding: 0 20px;
+    font-weight: 500;
+    color: #fff;
+}
+
+
+.username{
+    padding-left: 10px;
+   background-color:  rgb(9, 9, 89);
+    padding-right: 20px;
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+}
+.img_search{
+    cursor: pointer;
+    width: 30px;
+   
+}
+.img_search::after{
+    content: "\1F50D";
+}
+.search_box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    height: 90%;
+    background-color: rgb(129, 129, 225);
+
+}
+.close{
+    position: relative;
+    right: 30px;
+    cursor: pointer;
+}
+.close::before, 
+.close::after{
+content: "";
+position: absolute;
+width: 24px;
+height: 1px;
+background-color: white;
+}
+.close::before{
+transform: rotate(45deg);
+}
+.close::after{
+    transform: rotate(-45deg);
+    }

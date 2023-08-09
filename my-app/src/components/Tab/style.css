@@ -1,0 +1,9 @@
+.tab{
+    font-weight: 700;
+    cursor: pointer;
+    padding: 20px 30px;
+}
+.tab:hover{
+    color: cornflowerblue;
+    border-bottom: 2px solid grey;
+}
