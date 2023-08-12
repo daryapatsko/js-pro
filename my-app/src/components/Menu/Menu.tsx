@@ -6,7 +6,7 @@ interface IMenu{
     children:ReactNode
 }
 const Menu = ({menuClass,children}: IMenu) => {
-    const handleBurgerClick = (event: any,b: number) =>{
+    const handleBurgerClick = (event: React.MouseEvent<HTMLElement>,b: number) =>{
       console.log(event)
       console.log(b)
           }
