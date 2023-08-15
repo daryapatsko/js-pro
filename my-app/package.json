@@ -8,11 +8,8 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.40",
-<<<<<<< HEAD
     "@types/react": "^18.2.20",
-=======
-    "@types/react": "^18.2.19",
->>>>>>> 88a46d4eb8b3163aef02d9f510d8e6af485aaca7
+
     "@types/react-dom": "^18.2.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
