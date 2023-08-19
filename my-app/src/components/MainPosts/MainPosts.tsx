@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import React, {useState,useEffect} from 'react'
-=======
-import React, {useState} from 'react'
->>>>>>> 7616651045af65b568ca5195117d83744270be00
 import Post from '../Post/Post'
 import "./style.css"
 
@@ -34,19 +30,12 @@ const MainPosts = () => {
 
       console.log(posts)
   };
-<<<<<<< HEAD
 
   useEffect(() =>{
     fetchPosts()
   },[])
   return (
     <div>
-=======
-  return (
-    <div>
-      <button onClick={fetchPosts} >Get Posts</button> 
-    
->>>>>>> 7616651045af65b568ca5195117d83744270be00
         <div className="posts__container" > 
           <div className="left__side">
             <div className='main__posts'>
@@ -73,8 +62,4 @@ const MainPosts = () => {
   )
 }
 
-<<<<<<< HEAD
 export default MainPosts
-=======
-export default MainPosts
->>>>>>> 7616651045af65b568ca5195117d83744270be00
