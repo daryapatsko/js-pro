@@ -1,0 +1,23 @@
+.post__box{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+.date__post{
+    font-size: 14px;
+    color: grey;
+}
+.title__post{
+    padding: 20px 0;
+    font-weight: 700;
+    font-size: 30px;
+}
+.description__post{
+    color: grey;
+}
+.image__post img{
+    object-fit: cover;
+    width: 40%;
+}
+
