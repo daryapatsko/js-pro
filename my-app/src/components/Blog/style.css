@@ -1,0 +1,36 @@
+.blog_container{
+    padding: 20px;
+    background-color: lightgrey;;
+}
+.title_blog{
+    padding-bottom: 10px;
+}
+.btn_container{
+    display: flex;
+    justify-content:space-between;
+   
+}
+.btn__post{
+    background-color: lightgrey;
+    border: none;
+    transition: all 1s ease-in-out;
+}
+.btn__post:hover{
+    color: blue;
+    background-color: lightgrey;
+}
+.prev__button,
+.next__button{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+}
+
+.prev__button:hover,
+.next__button:hover{
+    
+    color: blue;
+}
+
+

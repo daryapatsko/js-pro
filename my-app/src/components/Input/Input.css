@@ -1,0 +1,9 @@
+.input__form{
+    margin: 10px 0;
+    padding: 10px 0;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.input__form::placeholder{
+    color: grey;
+}

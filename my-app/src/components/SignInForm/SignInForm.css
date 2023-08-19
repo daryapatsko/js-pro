@@ -1,0 +1,50 @@
+.wrapper{
+    height: 100%;
+}
+.signIn__container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: lightgrey;
+   
+ }
+.link__form{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+.link__form:hover{
+    color:rgb(21, 60, 234);
+}
+.form__container{
+    width: 500px;
+    border: 1px solid grey;
+    padding: 20px;
+    align-self: center;
+}
+.input__container::placeholder{
+    color: black;
+}
+
+.sub__form{
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sub__form span{
+    color: blue;
+    cursor: pointer;
+}
+.btn_form{
+    margin: 10px 0;
+    width: 100%;
+    padding: 10px 0;
+    cursor: pointer;
+    background-color: rgb(32, 32, 133);
+    color: #fff;
+    border: none;
+}
+
