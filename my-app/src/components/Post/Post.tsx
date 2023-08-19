@@ -25,9 +25,17 @@ const Post = ({id, image,text,date,title,description}:IPost) => {
       <div className="image__post"><img src={image} alt={text} /></div>
 
 
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> 7616651045af65b568ca5195117d83744270be00
     </div>
   )
 }
 
+<<<<<<< HEAD
 export default Post
+=======
+export default Post
+>>>>>>> 7616651045af65b568ca5195117d83744270be00

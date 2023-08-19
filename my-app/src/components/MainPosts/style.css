@@ -1,9 +1,21 @@
+<<<<<<< HEAD
+=======
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+>>>>>>> 7616651045af65b568ca5195117d83744270be00
 .posts__container{
     margin-top: 50px;
     display: flex;
     justify-content: space-between;
     width: 100%;
+<<<<<<< HEAD
     background-color:lightgrey;;
+=======
+    background-color: rgb(234, 218, 198);
+>>>>>>> 7616651045af65b568ca5195117d83744270be00
 
 }
 .left__side{
