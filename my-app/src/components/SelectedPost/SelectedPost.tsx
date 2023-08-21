@@ -2,10 +2,6 @@ import React from 'react'
 import "./style.css"
 import Menu from '../Menu/Menu'
 
-
-
-
-
 const SelectedPost = () => {
   return (
     <>
