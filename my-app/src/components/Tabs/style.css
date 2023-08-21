@@ -1,6 +1,5 @@
 .tabs_container{
-    background-color: rgb(245, 235, 235);
-    padding-left: 40px;
+    background-color:lightgrey;
     display: flex;
     align-items: center;
     width: 100%;

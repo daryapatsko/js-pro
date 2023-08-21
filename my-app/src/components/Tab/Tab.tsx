@@ -1,12 +1,12 @@
 import React, {ReactNode} from 'react'
 import "./style.css"
 interface ITab{
-    tabClass:string;
     children:ReactNode;
+    isOpen?:boolean;
 }
-const Tab = ({tabClass,children}: ITab) => {
+const Tab = ({children,isOpen}: ITab) => {
   return (
-    <div className={tabClass}>
+    <div className={isOpen ? "tab__open" : "tab"}>
       {children}
     </div>
   )

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import Post from '../Post/Post'
 import "./style.css"
 
@@ -30,10 +30,12 @@ const MainPosts = () => {
 
       console.log(posts)
   };
+
+  useEffect(() =>{
+    fetchPosts()
+  },[])
   return (
     <div>
-      <button onClick={fetchPosts} >Get Posts</button> 
-    
         <div className="posts__container" > 
           <div className="left__side">
             <div className='main__posts'>
