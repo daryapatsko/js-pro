@@ -3,18 +3,21 @@ import "./Input.css"
 
 
 interface IInput{
-    type:'password' | 'text',
-    label:string,
+    className?:'string',
+    type:'password' | 'text' | 'search',
+    label?:string,
     placeholder:string,
     value:string,
     onChange: (value: string) => void,
 
 }
+
+
 const Input:FC<IInput> = ({type,label,placeholder,value,onChange}) => {
   return (
-    <div>
+    <div className='input__container'>
       <label>{label}</label>
-      <input className='input__form' value={value} type={type} placeholder={placeholder} onChange={(e) => onChange(e.currentTarget.value)}/>
+      <input className='input__form' value={value} type={type} placeholder={placeholder} onChange={(e) => onChange(e.target.value)}/>
     </div>
   )
 }

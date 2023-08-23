@@ -5,7 +5,7 @@ import Menu from '../Menu/Menu'
 const SelectedPost = () => {
   return (
     <>
-    <Menu menuClass='menu__container'>Artem Markin</Menu>
+    <Menu menuClass='menu__container' >User</Menu>
     <div className='selected__post-container'>
         <div className="selected__post-date">Aug. 16, 2023, 4:28 PM</div>
         <div className="selected__post-title">Italy, country of south-central Europe, occupying a peninsula that juts deep into the Mediterranean Sea.</div>

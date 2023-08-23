@@ -11,7 +11,7 @@ const SignInForm = () => {
 
    return (
     <div>
-      <Menu menuClass='menu__container'>Artem Markin</Menu>
+      <Menu menuClass='menu__container' >User</Menu>
       <div className="signIn__container">
         <a className='link__form'>Back to home</a>
         <Title customClass='header__title'>  

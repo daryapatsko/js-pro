@@ -42,18 +42,18 @@ nav{
     height: 2px;
 }
 
-input{
+.input__form{
     width: 100%;
     height: 100%;
     border: none;
     display: block;
     background-color: rgb(129, 129, 225);
     outline: none;
-}
+} 
 
 
 
-input::placeholder{
+.input__form::placeholder{
 font-size: 18px;
     padding: 0 20px;
     font-weight: 500;
