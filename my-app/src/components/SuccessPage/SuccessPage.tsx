@@ -1,7 +1,6 @@
 import React from 'react'
 import Title from '../Title/Title'
 import "./style.css"
-// import { Button } from './SuccessPageStyled.ts'
 import Menu from '../Menu/Menu'
 
 const SuccessPage = () => {

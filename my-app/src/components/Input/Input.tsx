@@ -5,13 +5,16 @@ import "./Input.css"
 interface IInput{
     type:'password' | 'text',
     label:string,
-    placeholder:string
+    placeholder:string,
+    value:string,
+    onChange: (value: string) => void,
+
 }
-const Input:FC<IInput> = ({type,label,placeholder}) => {
+const Input:FC<IInput> = ({type,label,placeholder,value,onChange}) => {
   return (
     <div>
       <label>{label}</label>
-      <input className='input__form' type={type} placeholder={placeholder} />
+      <input className='input__form' value={value} type={type} placeholder={placeholder} onChange={(e) => onChange(e.currentTarget.value)}/>
     </div>
   )
 }
