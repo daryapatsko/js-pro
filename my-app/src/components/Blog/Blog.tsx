@@ -1,4 +1,4 @@
-import React,{ useContext } from 'react'
+import React,{ useContext,useState } from 'react'
 import "./style.css"
 import Title from '../Title/Title'
 import Tabs from '../Tabs/Tabs'
@@ -9,12 +9,12 @@ import { ThemeContext } from 'src/App'
 import { StyledBlogContainer } from './styled'
 
 const Blog = () => {
-
+  
   const {theme, switchTheme} = useContext(ThemeContext)
-
+  const [searchValue, setSearchValue] = useState('')
   return (
     <div >
-      <Menu menuClass='menu__container' >User</Menu>
+      <Menu value={searchValue} setSearchValue={setSearchValue}/>
       <StyledBlogContainer theme={theme}>
         <Title customClass='title_blog'>
           Blog

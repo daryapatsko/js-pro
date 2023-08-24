@@ -1,21 +1,20 @@
-import React,{ReactNode, useState} from 'react';
+import React from 'react';
 import "./style.css"
 
 interface IMenu{
-    menuClass: string;
-    children:ReactNode;
+    value:string;
+    setSearchValue:(value:string) =>void;
 }
 
 
-const Menu = ({menuClass,children}: IMenu) => {
+const Menu = ({value,setSearchValue}: IMenu) => {
     const handleBurgerClick = (event: React.MouseEvent<HTMLElement>,b: number) =>{
       console.log(event)
       console.log(b)
     }
-    const [searchValue, setSearchValue] = useState('')
- 
+   
   return (
-    <div className={menuClass} >
+    <div className='menu__container'>
         <nav>
             <div className="burger_menu" id='burger' onClick={(e) => handleBurgerClick(e,45)}>
                 <span />
@@ -24,14 +23,14 @@ const Menu = ({menuClass,children}: IMenu) => {
                 <input
                 className='input__form'
                 type='search' 
-                value={searchValue} 
+                value={value} 
                 placeholder='Search ...' 
-                onChange={(e) => setSearchValue(e.target.value)}
+                onChange={(e) => setSearchValue(e.currentTarget.value.toLowerCase())}
                 />
                 <div className="close" />
             </div>
             <div className="img_search"></div>
-            <div className="username">{children}</div>
+            <div className="username">User</div>
         </nav>
       
     </div>

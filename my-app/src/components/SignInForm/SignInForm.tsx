@@ -8,10 +8,10 @@ const SignInForm = () => {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] =useState('')
-
+  const [searchValue, setSearchValue] = useState('')
    return (
     <div>
-      <Menu menuClass='menu__container' >User</Menu>
+      <Menu value={searchValue} setSearchValue={setSearchValue} />
       <div className="signIn__container">
         <a className='link__form'>Back to home</a>
         <Title customClass='header__title'>  

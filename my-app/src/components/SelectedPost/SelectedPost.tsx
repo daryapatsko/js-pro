@@ -1,11 +1,12 @@
-import React from 'react'
+import React,{useState} from 'react'
 import "./style.css"
 import Menu from '../Menu/Menu'
 
 const SelectedPost = () => {
+  const [searchValue, setSearchValue] = useState('')
   return (
     <>
-    <Menu menuClass='menu__container' >User</Menu>
+    <Menu value={searchValue} setSearchValue={setSearchValue} ></Menu>
     <div className='selected__post-container'>
         <div className="selected__post-date">Aug. 16, 2023, 4:28 PM</div>
         <div className="selected__post-title">Italy, country of south-central Europe, occupying a peninsula that juts deep into the Mediterranean Sea.</div>

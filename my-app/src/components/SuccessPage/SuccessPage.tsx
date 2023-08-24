@@ -1,13 +1,14 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Title from '../Title/Title'
 import "./style.css"
 // import { Button } from './SuccessPageStyled.ts'
 import Menu from '../Menu/Menu'
 
 const SuccessPage = () => {
+  const [searchValue, setSearchValue] = useState('')
   return (
     <>
-    <Menu menuClass='menu__container' >User</Menu>
+    <Menu value={searchValue} setSearchValue={setSearchValue}/>
     <div className='signIn__container'>
       <a className='link__form'>Back to home</a>
       <Title customClass='header__title'>  
