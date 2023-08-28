@@ -61,11 +61,11 @@ input{
     display: block;
     background-color: rgb(129, 129, 225);
     outline: none;
-}
+} 
 
 
 
-input::placeholder{
+.input__form::placeholder{
 font-size: 18px;
     padding: 0 20px;
     font-weight: 500;
@@ -115,7 +115,7 @@ transform: rotate(45deg);
 .close::after{
     transform: rotate(-45deg);
     }
-
+    
 .sidebar{
     display: none;
 }

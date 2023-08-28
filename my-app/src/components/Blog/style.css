@@ -1,7 +1,3 @@
-.blog_container{
-    padding: 20px;
-    background-color: lightgrey;;
-}
 .title_blog{
     padding-bottom: 10px;
 }
@@ -32,5 +28,6 @@
     
     color: blue;
 }
-
-
+.btn__switch{
+    margin-top: 20px;
+}

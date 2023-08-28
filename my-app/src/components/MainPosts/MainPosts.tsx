@@ -33,8 +33,6 @@ const MainPosts = () => {
   useEffect(() =>{
     fetchPosts()
   },[])
-const param= useParams()
-console.log(param)
   return (
     
     <div>

@@ -18,5 +18,5 @@
 }
 .image__post img{
     object-fit: cover;
-    width: 40%;
+    max-width: 60px;
 }

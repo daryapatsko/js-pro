@@ -3,9 +3,10 @@ import "./style.css"
 
 interface IHeader{
     children:ReactNode,
-
+    value?:string;
+    setSearchValue?:(value:string) =>void;
 }
-const Header:FC<IHeader> = ({children}) => {
+const Header:FC<IHeader> = ({children,setSearchValue}) => {
     const [isActive, setIsActive] = useState(false)
 
     const handleBurgerClick = () =>{
@@ -18,7 +19,11 @@ const Header:FC<IHeader> = ({children}) => {
                 <span />
             </div>
             <div className="search_box">
-                <input type="text" className="search" placeholder='Search...'/>
+                <input type="search" 
+                className="search" 
+                placeholder='Search...'
+                // onChange={(e) => setSearchValue(e.target.value.toLowerCase())}
+                />
                 <div className="close"></div>
             </div>
             <div className="img_search">&#128269;</div>

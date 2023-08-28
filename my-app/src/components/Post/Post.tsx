@@ -1,7 +1,5 @@
 import React from 'react'
 import "./style.css"
-import { useLocation,useParams,useNavigate} from 'react-router-dom'
-
 
 
 interface IPost{
@@ -26,7 +24,6 @@ const Post = ({id, image,text,date,title,description}:IPost) => {
         <p className="description__post">{description}</p>
       </div>
       <div className="image__post"><img src={image} alt={text} /></div>
-
     </div>
    </>
   )
