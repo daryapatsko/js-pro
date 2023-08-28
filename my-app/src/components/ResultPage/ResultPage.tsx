@@ -1,12 +1,12 @@
 import React, {useEffect,useState} from 'react'
 import Menu from '../Menu/Menu'
 import Title from '../Title/Title'
-import { StyledContainerResult } from './styled'
-import { StyledImagePost } from './styled'
-import { StyledContentResult } from './styled'
-import { StyledDataPost} from './styled'
-import { StyledTitlePost } from './styled'
-import { StyledTextPost } from './styled'
+import { StyledContainerResult,
+  StyledImagePost,
+  StyledContentResult,
+  StyledDataPost,
+  StyledTitlePost,
+  StyledTextPost} from './styled'
 
 interface IPost{
     "id": number,
