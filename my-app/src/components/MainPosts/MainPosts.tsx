@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import Post from '../Post/Post'
 import "./style.css"
+import {useNavigate,useLocation, useParams, Link} from 'react-router-dom'
 
 
 
@@ -27,34 +28,45 @@ const MainPosts = () => {
       .catch((err) => {
         console.log(err.message)
       });
-
-      console.log(posts)
   };
 
   useEffect(() =>{
     fetchPosts()
   },[])
+const param= useParams()
+console.log(param)
   return (
+    
     <div>
         <div className="posts__container" > 
           <div className="left__side">
             <div className='main__posts'>
               {posts.map (({id,text,image,date,title,description,author}:IPost) =>(
                 id === 1 ? (
-                <Post id={id} image={image} date={date} text={text} title={title} description={description} author={author}/>)
+                <Link  to={`/post/${id}`} state= {{id, image, text,date,title}}>
+                  <Post id={id} image={image} date={date} text={text} title={title} description={description} author={author}/>
+                </Link>
+                )
                 : ''))}
             </div>
             <div className="middle__posts">
             {posts.map (({id,text,image,date,title,author}:IPost) =>(
                 id > 1 && id < 6  ? (
-                <Post id={id} image={image} date={date} text={text} title={title} author={author}/>)
+                  <Link  to={`/post/${id}`} state= {{id, image, text,date,title}}>
+                  <Post id={id} image={image} date={date} text={text} title={title} author={author}/>
+                </Link>
+                )
                 : ''))}
             </div>
           </div>
           <div className="little__posts">
           {posts.map (({id,text,image,date,title,author}:IPost) =>(
               id > 5  ? (
-              <Post id={id} image={image} date={date} text={text} title={title} author={author}/>)
+                <Link  to={`/post/${id}`} state= {{id, image, text,date,title}}>
+                    <Post id={id} image={image} date={date} text={text} title={title} author={author}/>
+                </Link>
+              
+              )
               : ''))}
           </div>
         </div>

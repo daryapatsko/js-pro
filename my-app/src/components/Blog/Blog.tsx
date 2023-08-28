@@ -4,12 +4,12 @@ import Title from '../Title/Title'
 import Tabs from '../Tabs/Tabs'
 import MainPosts from '../MainPosts/MainPosts'
 import Buttons from '../Buttons/Buttons'
-import Menu from '../Menu/Menu'
+import Header from '../Header/Header'
 
 const Blog = () => {
   return (
     <div >
-      <Menu menuClass='menu__container'>Artem Markin</Menu>
+      <Header>Artem Markin</Header>
       <div className="blog_container">
         <Title customClass='title_blog'>
           Blog

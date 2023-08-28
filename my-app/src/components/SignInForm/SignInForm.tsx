@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import "./SignInForm.css"
 import Title from '../Title/Title'
 import Input from '../Input/Input'
-import Menu from '../Menu/Menu'
+import Header from '../Header/Header'
+import {Link} from 'react-router-dom'
+import { StyledButtonSuccess } from './styled'
 
 const SignInForm = () => {
 
@@ -11,24 +13,29 @@ const SignInForm = () => {
 
    return (
     <div>
-      <Menu menuClass='menu__container'>Artem Markin</Menu>
-      <div className="signIn__container">
-        <a className='link__form'>Back to home</a>
-        <Title customClass='header__title'>  
-          <span>Sign In</span>
-        </Title>
+      <div className="wrapper">
+        <Header>Artem Markin</Header>
+        <div className="signIn__container">
+          <Link to='/'>Back to home</Link>
+          <Title customClass='header__title'>  
+            <span>Sign In</span>
+          </Title>
 
-        <form className='form__container'>
-          <Input type='text' value={email} placeholder='Email' label='Email' onChange={setEmail}/>
-          <Input type='password' value={password} placeholder='Password' label='Password' onChange={setPassword}/>
-          <a  className='link__form'>Forgot password?</a>
-          <div className="sub__form">
-            <button className='btn_form'>Sign In</button>
-            <div>Don't have an account? <span>Sign Up</span></div>
-          </div>
-        </form>
-      </div>
-      
+          <form className='form__container'>
+            <Input type='text' value={email} placeholder='Email' label='Email' onChange={setEmail}/>
+            <Input type='password' value={password} placeholder='Password' label='Password' onChange={setPassword}/>
+            <a  className='link__form'>Forgot password?</a>
+            <div className="sub__form">
+              <StyledButtonSuccess><Link to='/success_page'>Sign In</Link></StyledButtonSuccess>
+              <div>Don't have an account? <span>Sign Up</span></div>
+            </div>
+          </form>
+        </div>
+        <footer>
+          <div>2022</div>
+          <div>All rights reserved</div>
+       </footer>
+      </div>    
       
     </div>
    
