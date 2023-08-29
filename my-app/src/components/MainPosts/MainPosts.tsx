@@ -27,8 +27,6 @@ const MainPosts = () => {
       .catch((err) => {
         console.log(err.message)
       });
-
-      console.log(posts)
   };
 
   useEffect(() =>{

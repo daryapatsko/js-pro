@@ -23,8 +23,6 @@ const Post = ({id, image,text,date,title,description}:IPost) => {
         <p className="description__post">{description}</p>
       </div>
       <div className="image__post"><img src={image} alt={text} /></div>
-
-
     </div>
   )
 }
