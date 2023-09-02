@@ -6,6 +6,7 @@ import { Routes, Route} from 'react-router-dom'
 import Home from './components/Home/Home';
 import SuccessPage from './components/SuccessPage/SuccessPage';
 import SelectedPost from './components/SelectedPost/SelectedPost';
+import ResultPage from './components/ResultPage/ResultPage';
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
       <Route path='/success_page' element={<SuccessPage/>}></Route>
       <Route path='/posts' element={<Blog/>}></Route>
       <Route path='/post/:id' element={<SelectedPost/>}></Route>
+      <Route path='/search' element={<ResultPage/>}></Route>
     </Routes>
   
   );

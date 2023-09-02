@@ -37,12 +37,21 @@ const ResultPage = () => {
   useEffect(() =>{
     fetchPosts()
   },[])
-
   
-  
+//   const inputHandler = (e:React.ChangeEvent<HTMLInputElement>)=>{
+//     let lowerInput = e.target.value.toLowerCase()
+//     setSearchValue(lowerInput)
+// }
   return (
     <div>
-      <Header value={searchValue} setSearchValue={setSearchValue}>Artem Markin</Header>
+      <Header>
+      <input type="search" 
+                className="search" 
+                placeholder='Search...'
+                onChange={(e:React.ChangeEvent<HTMLInputElement>) => setSearchValue(e.target.value)}
+                />
+                <div className="close"></div>
+      </Header>
       <Title customClass='title_search'>
         <span> Search result '{searchValue}'</span>
       </Title>

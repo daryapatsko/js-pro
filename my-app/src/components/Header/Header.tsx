@@ -1,48 +1,49 @@
 import React,{ReactNode,FC,useState} from 'react';
 import "./style.css"
+import { Link } from 'react-router-dom';
+import { StyledHeader,StyledSidebarBtn } from './styled';
+import { useDispatch } from 'react-redux';
+
 
 interface IHeader{
-    children:ReactNode,
+    children?:ReactNode,
     value?:string;
     setSearchValue?:(value:string) =>void;
 }
 const Header:FC<IHeader> = ({children,setSearchValue}) => {
     const [isActive, setIsActive] = useState(false)
-
     const handleBurgerClick = () =>{
         setIsActive(!isActive)
           }
+    const dispatch = useDispatch()
+
   return (
-    <div className='menu__container'>
-        <nav>
+    <>
+    <StyledHeader>
+    <nav>
             <div className={`burger_menu ${isActive ? 'open' : ''}`} id='burger' onClick={handleBurgerClick}>
                 <span />
             </div>
             <div className="search_box">
-                <input type="search" 
-                className="search" 
-                placeholder='Search...'
-                // onChange={(e) => setSearchValue(e.target.value.toLowerCase())}
-                />
-                <div className="close"></div>
+            {children}
             </div>
-            <div className="img_search">&#128269;</div>
-            <div className="username">{children}</div>
+            <Link to='/search'><div className="img__search">&#128269;</div></Link>
+            <div className="username">Username</div>
         </nav>
         <div className={`sidebar ${isActive ? 'open' : ''}`} >
             <div className="btns__sidebar">
-                <div className="username btn__username">{children}</div>
-                <div className="home nav__btn">Home</div>
+                <div className="username btn__username">Username</div>
+                <Link to='/'><StyledSidebarBtn>Home</StyledSidebarBtn></Link>
                 <div className="add__post nav__btn" >Add post</div>
             </div>
             <div className="btn__theme">
-                <span>&#9788;</span>
-                <span>&#9790;</span>
+                <span onClick={() => dispatch({type: "TOGGLE_THEME", payload: "light"}) }>&#9788;</span>
+                <span  onClick={() => dispatch({type: "TOGGLE_THEME", payload: "dark"}) }>&#9790;</span>
             </div>
             <div className="log__out">Log Out</div>
         </div>
-      
-    </div>
+        </StyledHeader>
+        </>
   )
 }
 

@@ -11,9 +11,9 @@ const SignInForm = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] =useState('')
    return (
-    <div>
+    <>
       <div className="wrapper">
-        <Header>Artem Markin</Header>
+        <Header></Header>
         <div className="signIn__container">
           <Link to='/'>Back to home</Link>
           <Title customClass='header__title'>  
@@ -25,7 +25,7 @@ const SignInForm = () => {
             <Input type='password' value={password} placeholder='Password' label='Password' onChange={setPassword}/>
             <a  className='link__form'>Forgot password?</a>
             <div className="sub__form">
-              <StyledButtonSuccess><Link to='/success_page'>Sign In</Link></StyledButtonSuccess>
+            <Link to='/success_page'><StyledButtonSuccess>Sign In</StyledButtonSuccess></Link>
               <div>Don't have an account? <span>Sign Up</span></div>
             </div>
           </form>
@@ -36,7 +36,7 @@ const SignInForm = () => {
        </footer>
       </div>    
       
-    </div>
+    </>
    
   )
 }

@@ -8,7 +8,7 @@ import { StyledButtonHome } from './styled'
 const SuccessPage = () => {
   return (
     <>
-    <Header>Artem Markin</Header>
+    <Header></Header>
     <div className='signIn__container'>
         <Link to='/'>Back to home</Link>
         <Title customClass='header__title'>  
@@ -17,9 +17,9 @@ const SuccessPage = () => {
         <form className='form__container'>
             <p>Email confirmed</p>
             <p>Your registration is now completed!</p>
-            <StyledButtonHome><Link to='/posts'>
+            <Link to='/posts'><StyledButtonHome>
                 Go To Home!
-            </Link></StyledButtonHome>
+            </StyledButtonHome></Link>
         </form>
         
     </div>

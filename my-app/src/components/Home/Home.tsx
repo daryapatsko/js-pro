@@ -8,9 +8,9 @@ import {Link} from "react-router-dom"
 const Home = () => {
   return (
     <div className='wrapper'>
-      <Header>Artem Markin</Header>
+      <Header></Header>
       <Title customClass='title__homePage'> Home Page</Title>
-      <StyledButtonHome><Link to='/sign_in'>Sign In</Link></StyledButtonHome>
+      <Link to='/sign_in'><StyledButtonHome>Sign In</StyledButtonHome></Link>
       <footer>
         <div>2022</div>
         <div>All rights reserved</div>
