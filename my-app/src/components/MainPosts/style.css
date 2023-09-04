@@ -40,6 +40,7 @@ button:hover{
     height: 100px;
 }
 .little__posts{
+    text-align: left;
     width: 40%;
 }
 .little__posts .image__post{
@@ -48,4 +49,7 @@ button:hover{
 }
 .little__posts .content__post-box{
 padding-right: 20px;
+}
+a{
+    text-decoration: none;
 }

@@ -1,5 +1,5 @@
 import React, {useEffect,useState} from 'react'
-import Menu from '../Menu/Menu'
+import Header from '../Header/Header'
 import Title from '../Title/Title'
 import { StyledContainerResult,
   StyledImagePost,
@@ -20,7 +20,8 @@ interface IPost{
 }
 
 const ResultPage = () => {
-    const [posts, setPosts] = useState<IPost[]>([])
+  const [searchValue, setSearchValue] = useState('')
+  const [posts, setPosts] = useState<IPost[]>([])
 
   const fetchPosts = () => {
       fetch('https://studapi.teachmeskills.by/blog/posts/?limit=10')
@@ -36,18 +37,27 @@ const ResultPage = () => {
   useEffect(() =>{
     fetchPosts()
   },[])
-
-  const [searchValue, setSearchValue] = useState('')
   
+//   const inputHandler = (e:React.ChangeEvent<HTMLInputElement>)=>{
+//     let lowerInput = e.target.value.toLowerCase()
+//     setSearchValue(lowerInput)
+// }
   return (
     <div>
-      <Menu value={searchValue} setSearchValue={setSearchValue}/>
+      <Header>
+      <input type="search" 
+                className="search" 
+                placeholder='Search...'
+                onChange={(e:React.ChangeEvent<HTMLInputElement>) => setSearchValue(e.target.value)}
+                />
+                <div className="close"></div>
+      </Header>
       <Title customClass='title_search'>
         <span> Search result '{searchValue}'</span>
       </Title>
       <div className='main__posts'>
               {posts.filter((post) => post.title.toLowerCase().includes(searchValue)
-              ).map (({id,text,image,date,title,description,author}:IPost) =>(
+              ).map (({id,text,image,date,title,description}:IPost) =>(
                 <StyledContainerResult key={id}>
                 <StyledContentResult>
                     <StyledImagePost src={image} alt={text}/>

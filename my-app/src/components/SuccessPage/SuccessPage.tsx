@@ -1,27 +1,33 @@
-import React,{useState} from 'react'
+import React from 'react'
 import Title from '../Title/Title'
 import "./style.css"
-import Menu from '../Menu/Menu'
+import Header from '../Header/Header'
+import {Link} from 'react-router-dom'
+import { StyledButtonHome } from './styled'
+
 
 const SuccessPage = () => {
-  const [searchValue, setSearchValue] = useState('')
   return (
     <>
-    <Menu value={searchValue} setSearchValue={setSearchValue}/>
+    <Header></Header>
     <div className='signIn__container'>
-      <a className='link__form'>Back to home</a>
-      <Title customClass='header__title'>  
-          <span>Success</span>
-      </Title>
-      <form className='form__container'>
-          <p>Email confirmed</p>
-          <p>Your registration is now completed!</p>
-          <button className='btn__form' onClick={() =>
-          console.log('Go to home!')}>
-              Go To Home!
-          </button>
-      </form>
+        <Link to='/'>Back to home</Link>
+        <Title customClass='header__title'>  
+            <span>Success</span>
+        </Title>
+        <form className='form__container'>
+            <p>Email confirmed</p>
+            <p>Your registration is now completed!</p>
+            <Link to='/posts'><StyledButtonHome>
+                Go To Home!
+            </StyledButtonHome></Link>
+        </form>
+        
     </div>
+    <footer>
+          <div>2022</div>
+          <div>All rights reserved</div>
+       </footer>
     </>
     
   )

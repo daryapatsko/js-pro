@@ -22,12 +22,3 @@
 .link__form:hover{
     color:rgb(21, 60, 234);
 }
-.btn__form{
-    margin: 10px 0;
-    width: 100%;
-    padding: 10px 0;
-    cursor: pointer;
-    background-color: rgb(32, 32, 133);
-    color: #fff;
-    border: none;
-}

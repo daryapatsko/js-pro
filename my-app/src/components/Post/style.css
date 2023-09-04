@@ -1,7 +1,7 @@
 .post__box{
     display: flex;
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 10px;
 }
 .date__post{
@@ -9,6 +9,7 @@
     color: grey;
 }
 .title__post{
+    cursor: pointer;
     padding: 20px 0;
     font-weight: 700;
     font-size: 30px;
@@ -19,4 +20,25 @@
 .image__post img{
     object-fit: cover;
     max-width: 60px;
+}
+.pagination{
+    cursor: pointer;
+    text-align: right;
+}
+.dot{
+    margin: 0 2px;
+    height: 8px;
+    width: 8px;
+    background-color: grey;
+    border-radius: 50%;
+    display: inline-block;
+}
+.info__post{
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.likes,
+.dislikes{
+    cursor: pointer;
 }

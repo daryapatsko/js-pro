@@ -1,6 +1,3 @@
-.menu__container{
-    width: 100%;  
-}
 nav{
     height: 70px;
     display: flex;
@@ -14,6 +11,7 @@ nav{
     height: 100%;
     position: relative;
     cursor: pointer;
+    transition: all 1s ease-in-out;
 }
 .burger_menu::before{
     height: 2px;
@@ -41,8 +39,19 @@ nav{
     background-color: #fff;
     height: 2px;
 }
-
-.input__form{
+.burger_menu.open::before{
+    left: 45%;
+    top: 47%;
+    transform:translate(-50%,0%) rotate(45deg);
+}
+.burger_menu.open::after{
+    bottom: 50%;
+    transform:translate(0%,-50%) rotate(-45deg);
+}
+.burger_menu.open span{
+    opacity: 0;
+}
+input{
     width: 100%;
     height: 100%;
     border: none;
@@ -72,18 +81,15 @@ font-size: 18px;
 .img_search{
     cursor: pointer;
     width: 30px;
-   
 }
-.img_search::after{
-    content: "\1F50D";
-}
+
+
 .search_box{
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 70%;
     height: 90%;
-    background-color: rgb(129, 129, 225);
 
 }
 .close{
@@ -105,3 +111,62 @@ transform: rotate(45deg);
 .close::after{
     transform: rotate(-45deg);
     }
+    
+.sidebar{
+    display: none;
+}
+
+.sidebar.open{
+    border-bottom: 1px solid blue;
+    border-right:1px solid blue ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 300px;
+    background-color: #fff;
+    height: 90%;
+}
+.nav__btn{
+    cursor: pointer;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid grey;
+}
+.nav__btn:hover{
+    color: blue;
+}
+.btn__username{
+    padding: 20px;
+    text-align: center;
+    height: 10%;
+    background-color: blue;
+    color: #fff;
+}
+.btn__theme{
+    margin-top: 40px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.btn__theme span{
+    width: 50%;
+    cursor: pointer;
+    display: block;
+    border: 1px solid grey;
+    padding: 10px;
+    margin: 10px;
+}
+.btn__theme span:hover{
+    color: blue;
+}
+.log__out{
+    cursor: pointer;
+    background-color: lightgrey;
+    padding: 20px;
+    text-align: center;
+    font-weight: 700;
+}
