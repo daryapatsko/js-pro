@@ -11,6 +11,7 @@ const Home = () => {
       <Header></Header>
       <Title customClass='title__homePage'> Home Page</Title>
       <Link to='/sign_in'><StyledButtonHome>Sign In</StyledButtonHome></Link>
+      <Link to='/sign_up'><StyledButtonHome>Sign Up</StyledButtonHome></Link>
       <footer>
         <div>2022</div>
         <div>All rights reserved</div>

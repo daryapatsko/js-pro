@@ -1,4 +1,5 @@
-import { legacy_createStore as createStore } from "redux";
+import { legacy_createStore as createStore,applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const initialState = {
@@ -9,6 +10,13 @@ const initialState = {
     id:null
   },
   posts: [],
+  tab:'All',
+  isLoading:false,
+  user:{
+    username: '',
+    email:'',
+    id:null,
+  },
 };
 
 const rootReducer = (state = initialState, action: any) => {
@@ -57,10 +65,41 @@ const rootReducer = (state = initialState, action: any) => {
           })
       }
     }
+    case "TOGGLE_TABS": {
+      return{
+          ...state,
+        tab: action.payload,
+      }
+    }
+    case "ADD_FAVORITES": {
+      return{
+          ...state,
+          posts: state.posts.map((post: {id: number, isFavorites?:boolean}) =>{
+           if(post.id === action.payload){
+            post = {...post, isFavorites: post.isFavorites !== undefined && post.isFavorites === true ? post.isFavorites = false : true}
+           }
+            return post
+          })
+      }
+    }
+    case "SET_LOADING": {
+      return{
+          ...state,
+        isLoading: !state.isLoading,
+      }
+    }
+    case "SET_USER": {
+      return{
+          ...state,
+          user: action.payload,
+      }
+    }
+
     default:
       return state;
   }
 };
-const store = createStore(rootReducer,composeWithDevTools());
+const store = createStore(rootReducer,
+  composeWithDevTools(applyMiddleware(thunk)));
 
 export default store;

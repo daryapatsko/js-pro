@@ -53,3 +53,7 @@ padding-right: 20px;
 a{
     text-decoration: none;
 }
+.popular__posts{
+    display: flex;
+    flex-direction: column;
+}
