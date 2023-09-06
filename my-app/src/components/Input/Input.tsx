@@ -4,7 +4,7 @@ import "./Input.css"
 
 interface IInput{
     className?:'string',
-    type:'password' | 'text' | 'search',
+    type:'password' | 'text' | 'search' | 'email',
     label?:string,
     placeholder:string,
     value:string,

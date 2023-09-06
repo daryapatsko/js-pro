@@ -1,12 +1,20 @@
-import React, {ReactNode} from 'react'
+import React, {FC} from 'react'
 import "./style.css"
+import { useSelector, useDispatch } from 'react-redux';
+
+
 interface ITab{
-    children:ReactNode;
-    isOpen?:boolean;
+    label:string;
+    children?:string;
 }
-const Tab = ({children,isOpen}: ITab) => {
-  return (
-    <div className={isOpen ? "tab__open" : "tab"}>
+
+
+const Tab:FC<ITab> = ({label,children}) => {
+  const tab = useSelector(({tab}) => tab)
+  const dispatch = useDispatch()
+  return (  
+    <div className={`${tab === label ? 'active' : ''}`} onClick={() =>dispatch ({type: "TOGGLE_TABS",payload: label })}>
+      <label className='tab'>{label}</label>
       {children}
     </div>
   )

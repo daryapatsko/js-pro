@@ -1,0 +1,8 @@
+.btn_signUp{
+
+    margin: 20px auto;
+    cursor: pointer;
+}
+input.input__form::placeholder{
+    color: grey;
+}

@@ -12,6 +12,7 @@ export const StyledModalContainer = styled.div`
 
 export const StyledModalWindow = styled.div`
 width:500px;
+opacity:1;
 background:#443333;
 color:#fff;
 top:50%;
