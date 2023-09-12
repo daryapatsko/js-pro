@@ -1,8 +1,10 @@
 import React from 'react'
+import { Link } from "react-router-dom"
+
 import Header from '../Header/Header'
 import Title from '../Title/Title'
+
 import { StyledButtonHome } from './styled'
-import {Link} from "react-router-dom"
 
 
 const Home = () => {
