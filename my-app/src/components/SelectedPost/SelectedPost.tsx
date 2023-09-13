@@ -1,38 +1,44 @@
 import React from 'react'
-import Header from '../Header/Header'
-import { useLocation, Link} from 'react-router-dom'
-import { StyleSelectedPostContainer, 
-         StyledDateSelected,
-         StyledTitleSelected,
-         StyledImgContainerSelected,
-         StyledTextSelected,
-         StyledBtnContainerSelected} from './styled'
+import {  Link, useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
-     
+import Header from '../Header/Header'
+
+import {
+  StyleSelectedPostContainer,
+  StyledDateSelected,
+  StyledTitleSelected,
+  StyledImgContainerSelected,
+  StyledTextSelected,
+  StyledBtnContainerSelected
+} from './styled'
+
+
 const SelectedPost = () => {
-  const {state}= useLocation()
-  const nextId = state.id + 1;
-  const prevId = state.id - 1;
-  
+  // const { state } = useLocation()
+  const post = useSelector(({ post }) => post);
+  const navigate = useNavigate()
+
   return (
     <>
-    <Header></Header>
-    <StyleSelectedPostContainer>
-        <StyledDateSelected>{state.date}
+      <Header></Header>
+      <StyleSelectedPostContainer>
+        <StyledDateSelected>{post.date}
         </StyledDateSelected>
-        <StyledTitleSelected>{state.title}</StyledTitleSelected>
+        <StyledTitleSelected>{post.title}</StyledTitleSelected>
         <StyledImgContainerSelected>
-          <img src={state.image} alt={state.id}/>
+          <img src={post.image} alt={post.id} />
         </StyledImgContainerSelected>
-        <StyledTextSelected>{state.text}</StyledTextSelected>
+        <StyledTextSelected>{post.text}</StyledTextSelected>
         <StyledBtnContainerSelected>
-            <Link to={`/post/${prevId}`} ><button className='btn__selected-post'>Previous</button></Link>
-            <Link to={`/post/${nextId}`}><button className='btn__selected-post'>Next</button></Link> 
+          {/* <Link to={`/blog/posts/${prevId}`} ><button className='btn__selected-post'>Previous</button></Link>
+          <Link to={`/blog/posts/${nextId}`}><button className='btn__selected-post'>Next</button></Link> */}
+          {/* <button type='button' onClick={() => navigate(`/blog/posts/${prevId}`)} className='btn__selected-post'>Previous</button> */}
         </StyledBtnContainerSelected>
-      
-    </StyleSelectedPostContainer>
+
+      </StyleSelectedPostContainer>
     </>
-   
+
   )
 }
 
