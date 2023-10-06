@@ -5,11 +5,11 @@ import "./Input.css"
 
 interface IInput {
   className?: 'string',
-  type: 'password' | 'text' | 'search' | 'email',
+  type: 'password' | 'text' | 'search' | 'email'| 'file',
   label?: string,
-  placeholder: string,
-  value: string,
-  onChange: (value: string) => void,
+  placeholder?: string,
+  value: string | number,
+  onChange: (value: any) => void,
 
 }
 

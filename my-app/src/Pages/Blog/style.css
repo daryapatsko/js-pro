@@ -31,3 +31,10 @@
 .btn__switch{
     margin-top: 20px;
 }
+.sort_box{
+    display: flex;
+    padding: 10px;
+}
+.sort_title{
+    padding-right: 10px;
+}

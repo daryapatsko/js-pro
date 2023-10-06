@@ -4,9 +4,9 @@ import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from 'redux-thunk'
 import { AnyAction } from 'redux'
 
-import Title from '../Title/Title'
-import Input from '../Input/Input'
-import Header from '../Header/Header'
+import Title from 'src/components/Title'
+import Input from 'src/components/Input/Input'
+import Header from 'src/components/Header'
 import { SIGN_IN } from 'src/actions/actions'
 
 import { StyledButtonSuccess } from './styled'

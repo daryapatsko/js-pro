@@ -22,6 +22,7 @@ const Header: FC<IHeader> = ({ children, setSearchValue }) => {
     const dispatch = useDispatch()
     const logOut = (() => {
         localStorage.removeItem('access')
+        localStorage.removeItem('refresh')
         navigate('/sign_in')
     })
     return (
@@ -40,8 +41,10 @@ const Header: FC<IHeader> = ({ children, setSearchValue }) => {
                 <div className={`sidebar ${isActive ? 'open' : ''}`} >
                     <div className="btns__sidebar">
                         <div className="username btn__username">{name}</div>
-                        <Link to='/'><StyledSidebarBtn>Home</StyledSidebarBtn></Link>
-                        <div className="add__post nav__btn" >Add post</div>
+                        <StyledSidebarBtn onClick={() => navigate('/')}>Home</StyledSidebarBtn>
+                       <StyledSidebarBtn onClick={() => navigate('/my-posts')}>My Posts</StyledSidebarBtn>
+                        <StyledSidebarBtn onClick={() => navigate('/add-post')}>Add Post</StyledSidebarBtn>
+                        
                     </div>
                     <div className="btn__theme">
                         <span onClick={() => dispatch({ type: "TOGGLE_THEME", payload: "light" })}>&#9788;</span>

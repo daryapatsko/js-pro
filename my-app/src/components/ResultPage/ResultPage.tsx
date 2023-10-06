@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import instance from 'src/store/axiosConfig'
 
-import Header from '../Header/Header'
-import Title from '../Title/Title'
+import Header from 'src/components/Header'
+import Title from 'src/components/Title'
 
 import {
   StyledContainerResult,
@@ -11,6 +12,8 @@ import {
   StyledTitlePost,
   StyledTextPost
 } from './styled'
+import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 interface IPost {
   "id": number,
@@ -24,32 +27,28 @@ interface IPost {
 }
 
 const ResultPage = () => {
+  const navigate = useNavigate()
   const [searchValue, setSearchValue] = useState('')
-  const [posts, setPosts] = useState<IPost[]>([])
-
-  const fetchPosts = () => {
-    fetch('https://studapi.teachmeskills.by/blog/posts/?limit=10')
-      .then((response) => response.json())
-      .then((data) => {
-        setPosts(data.results);
-      })
-      .catch((err) => {
-        console.log(err.message)
-      });
-  };
-
+  const [searchPosts, setSearchPosts] = useState<IPost[]>([])
+  // const [posts, setPosts] = useState<IPost[]>([])
+  const posts: IPost[] = useSelector(({ posts }) => posts)
+  const filteredPosts = posts.filter((post) => {
+    return post.title.toLowerCase().includes(searchValue.toLowerCase())
+  })
+ 
   useEffect(() => {
-    fetchPosts()
-  }, [])
+    instance.get(`blog/posts/?search=${searchValue}`)
+      .then((data) => {
+        console.log(data)
+        setSearchPosts(data.data.results)
+      })
+  }, [searchValue])
 
-  //   const inputHandler = (e:React.ChangeEvent<HTMLInputElement>)=>{
-  //     let lowerInput = e.target.value.toLowerCase()
-  //     setSearchValue(lowerInput)
-  // }
   return (
     <div>
       <Header>
         <input type="search"
+        id='search'
           className="search"
           placeholder='Search...'
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchValue(e.target.value)}
@@ -60,8 +59,8 @@ const ResultPage = () => {
         <span> Search result '{searchValue}'</span>
       </Title>
       <div className='main__posts'>
-        {posts.filter((post) => post.title.toLowerCase().includes(searchValue)
-        ).map(({ id, text, image, date, title, description }: IPost) => (
+        {Array.isArray(filteredPosts) && 
+        filteredPosts.map(({ id, text, image, date, title, description }: IPost) => (
           <StyledContainerResult key={id}>
             <StyledContentResult>
               <StyledImagePost src={image} alt={text} />
@@ -72,7 +71,9 @@ const ResultPage = () => {
               </div>
             </StyledContentResult>
 
-          </StyledContainerResult>))}
+          </StyledContainerResult>
+        ))
+        }
       </div>
     </div>
   )
