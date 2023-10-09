@@ -20,6 +20,7 @@ const initialState = {
   },
   post: [],
   name:'',
+  sort:'',
 };
 
 const rootReducer = (state = initialState, action: any) => {
@@ -115,7 +116,24 @@ const rootReducer = (state = initialState, action: any) => {
         name: action.payload,
       }
     }
-
+    case "SET_SEARCH_POSTS": {
+      return {
+        ...state,
+        searchPosts: action.payload,
+      }
+    }
+    case "SET_MY_POSTS": {
+      return {
+        ...state,
+        myPosts: action.payload,
+      }
+    }
+    case "SET_SORT_BY": {
+      return {
+        ...state,
+        sort: action.payload,
+      }
+    }
     default:
       return state;
   }

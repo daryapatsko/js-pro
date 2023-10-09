@@ -27,3 +27,7 @@ footer{
     justify-content: space-between;
     background-color: lightgrey;
 }
+a{
+    text-decoration: none;
+    color:black;
+}
